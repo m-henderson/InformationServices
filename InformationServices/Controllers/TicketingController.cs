@@ -104,5 +104,10 @@ namespace InformationServices.Controllers
 
             return View(ticket);
         }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
     }
 }

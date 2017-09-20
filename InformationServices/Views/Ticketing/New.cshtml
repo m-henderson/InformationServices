@@ -1,0 +1,50 @@
+﻿@model InformationServices.Models.ViewModels.TicketViewModel
+@{
+    ViewData["Title"] = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Ticket</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <form asp-action="SaveTicket">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ticket.Title" class="control-label"></label>
+                <input asp-for="Ticket.Title" class="form-control" />
+                <span asp-validation-for="Ticket.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ticket.SitNumber" class="control-label"></label>
+                <input asp-for="Ticket.SitNumber" class="form-control" id="dateCreatedField"/>
+                <span asp-validation-for="Ticket.SitNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ticket.DateCreated" class="control-label"></label>
+                <input asp-for="Ticket.DateCreated" class="form-control" id="dateCreatedField"/>
+                <span asp-validation-for="Ticket.DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <select asp-for="Ticket.Status" asp-items="Model.Statuses"></select> 
+            </div>
+            <div class="form-group">
+                <label asp-for="Ticket.Description" class="control-label"></label>
+                <textarea asp-for="Ticket.Description" class="form-control"></textarea>
+                <span asp-validation-for="Ticket.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

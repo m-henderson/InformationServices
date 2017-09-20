@@ -1,0 +1,103 @@
+﻿@using InformationServices.Extensions
+@model PaginatedList<InformationServices.Models.Ticket>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-lg-10">
+        @await Html.PartialAsync("_SearchBar")
+    </div>
+    <div class="col-lg-2">
+        <a asp-action="New"
+           class="btn btn-default">
+            Create New Ticket
+        </a>
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        @*
+                     <th><a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Ticket.Title)</a></th>
+                    <th><a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.Ticket.Description)</a></th>
+                *@ 
+        <th>Created</th>
+        <th>Status</th>
+        <th>Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var ticket in Model)
+    {
+        <tr>
+            <td>@ticket.Id</td>
+            <td>@ticket.Title</td>
+            <td>@ticket.Description.Truncate(20)</td>
+            <td>@ticket.DateCreated</td>
+            @if (ticket.Status == "True")
+            {
+                <td style="color: #d9534f">Open</td>
+            }
+            else
+            {
+                <td style="color: #5cb85c">Closed</td>
+            }
+            <td>
+                <a asp-action="Edit" asp-route-id="@ticket.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@ticket.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@ticket.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>
+
+<script>
+    /*
+    function validateSearch() {
+        var searchValue = document.getElementById("search").value;
+
+        if (searchValue == null) {
+            document.getElementById("backToList").click();
+        } else {
+            
+        }
+    }
+    
+    window.setInterval(function(){
+       validateSearch();
+
+    }, 1000);
+    */
+    //var searchInput = document.getElementById("search").value;
+    
+
+</script>

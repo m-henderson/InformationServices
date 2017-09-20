@@ -22,3 +22,15 @@ C:/WebApps/InformationServices/InformationServices/obj/Debug/netcoreapp2.0/UserS
 /home/michael/InformationServices/InformationServices/obj/Debug/netcoreapp2.0/InformationServices.AssemblyInfo.cs
 /home/michael/InformationServices/InformationServices/obj/Debug/netcoreapp2.0/InformationServices.dll
 /home/michael/InformationServices/InformationServices/obj/Debug/netcoreapp2.0/InformationServices.pdb
+C:\projects\InformationServices\InformationServices\bin\Debug\netcoreapp2.0\InformationServices.deps.json
+C:\projects\InformationServices\InformationServices\bin\Debug\netcoreapp2.0\InformationServices.runtimeconfig.json
+C:\projects\InformationServices\InformationServices\bin\Debug\netcoreapp2.0\InformationServices.runtimeconfig.dev.json
+C:\projects\InformationServices\InformationServices\bin\Debug\netcoreapp2.0\InformationServices.dll
+C:\projects\InformationServices\InformationServices\bin\Debug\netcoreapp2.0\InformationServices.pdb
+C:\projects\InformationServices\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.csprojResolveAssemblyReference.cache
+C:\projects\InformationServices\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.csproj.CoreCompileInputs.cache
+C:\projects\InformationServices\InformationServices\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\projects\InformationServices\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.AssemblyInfoInputs.cache
+C:\projects\InformationServices\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.AssemblyInfo.cs
+C:\projects\InformationServices\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.dll
+C:\projects\InformationServices\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.pdb

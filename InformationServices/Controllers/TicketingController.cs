@@ -111,5 +111,25 @@ namespace InformationServices.Controllers
 
             return View(ticket);
         }
+
+        [HttpPost]
+        public IActionResult UpdateTicket(Ticket ticket)
+        {
+
+            var ticketInDb = _dbContext.Tickets.SingleOrDefault(t => t.Id == ticket.Id);
+            ticketInDb.Id = ticket.Id;
+            ticketInDb.Title = ticket.Title;
+            ticketInDb.Description = ticket.Description;
+            ticketInDb.Status = ticket.Status;
+            ticketInDb.SitNumber = ticket.SitNumber;
+            ticketInDb.DateCreated = ticket.DateCreated;
+            ticketInDb.MonthCreated = ticketInDb.MonthCreated;
+            ticketInDb.YearCreated = ticketInDb.YearCreated;
+
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+
+        }
     }
 }

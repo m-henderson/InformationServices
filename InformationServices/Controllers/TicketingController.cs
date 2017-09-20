@@ -105,9 +105,11 @@ namespace InformationServices.Controllers
             return View(ticket);
         }
 
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            var ticket = _dbContext.Tickets.Single(t => t.Id == id);
+
+            return View(ticket);
         }
     }
 }

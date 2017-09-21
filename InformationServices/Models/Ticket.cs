@@ -10,7 +10,6 @@ namespace InformationServices.Models
 {
     public class Ticket
     {
-
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -20,13 +19,7 @@ namespace InformationServices.Models
         public DateTime? DateCreated { get; set; }
         public int? MonthCreated { get; set; }   
         public int? YearCreated { get; set; }
-
         public int StatusId { get; set; }
-
         public virtual ICollection<Status> Statuses { get; set; }
-
-        
-        
-
     }
 }

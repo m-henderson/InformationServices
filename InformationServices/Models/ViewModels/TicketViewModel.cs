@@ -22,6 +22,10 @@ namespace InformationServices.Models.ViewModels
         public int? MonthCreated { get; set; }
         public int? YearCreated { get; set; }
 
+        public Ticket Ticket { get; set; }
+
+        public Status Status { get; set; }
+
 
         public List<SelectListItem> Statuses { get; set; } = new List<SelectListItem>
         {

@@ -76,9 +76,11 @@ namespace InformationServices.Controllers
 
         public IActionResult New()
         {
-            var model = new TicketViewModel();
 
-            return View(model);
+
+            var viewModel = new TicketViewModel();
+
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -86,9 +88,12 @@ namespace InformationServices.Controllers
         {
             var currentMonth = DateTime.Now.Month;
             var currentYear = DateTime.Now.Year;
+            var currentTime = DateTime.Now;
+
 
             ticket.MonthCreated = currentMonth;
             ticket.YearCreated = currentYear;
+            ticket.DateCreated = currentTime;
 
             _dbContext.Tickets.Add(ticket);
             _dbContext.SaveChanges();
@@ -129,6 +134,7 @@ namespace InformationServices.Controllers
         {
 
             var ticketInDb = _dbContext.Tickets.SingleOrDefault(t => t.Id == ticket.Id);
+
             ticketInDb.Id = ticket.Id;
             ticketInDb.Title = ticket.Title;
             ticketInDb.Description = ticket.Description;

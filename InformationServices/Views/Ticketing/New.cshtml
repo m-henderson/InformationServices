@@ -22,11 +22,6 @@
                 <span asp-validation-for="Ticket.SitNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ticket.DateCreated" class="control-label"></label>
-                <input asp-for="Ticket.DateCreated" class="form-control" id="dateCreatedField"/>
-                <span asp-validation-for="Ticket.DateCreated" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <select asp-for="Ticket.StatusId" asp-items="Model.Statuses"></select> 
             </div>
             <div class="form-group">

@@ -11,9 +11,10 @@ using System;
 namespace InformationServices.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170921124707_AddStatusIdToTicket")]
+    partial class AddStatusIdToTicket
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,11 +95,7 @@ namespace InformationServices.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("TicketId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("TicketId");
 
                     b.ToTable("Statuses");
                 });
@@ -233,13 +230,6 @@ namespace InformationServices.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("InformationServices.Models.Status", b =>
-                {
-                    b.HasOne("InformationServices.Models.Ticket")
-                        .WithMany("Statuses")
-                        .HasForeignKey("TicketId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

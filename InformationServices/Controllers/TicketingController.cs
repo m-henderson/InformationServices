@@ -8,6 +8,7 @@ using InformationServices.Data;
 using InformationServices.Models;
 using InformationServices.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace InformationServices.Controllers
@@ -76,7 +77,6 @@ namespace InformationServices.Controllers
         public IActionResult New()
         {
             var model = new TicketViewModel();
-            model.Status = "True";
 
             return View(model);
         }
@@ -109,7 +109,19 @@ namespace InformationServices.Controllers
         {
             var ticket = _dbContext.Tickets.Single(t => t.Id == id);
 
-            return View(ticket);
+            var viewModel = new TicketViewModel
+            {
+
+                StatusId =  ticket.StatusId,
+                Title = ticket.Title, 
+                Id = ticket.Id,
+                DateCreated = ticket.DateCreated,
+                SitNumber = ticket.SitNumber,
+                Description = ticket.Description
+                
+            }; 
+          
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -120,8 +132,8 @@ namespace InformationServices.Controllers
             ticketInDb.Id = ticket.Id;
             ticketInDb.Title = ticket.Title;
             ticketInDb.Description = ticket.Description;
-            ticketInDb.Status = ticket.Status;
             ticketInDb.SitNumber = ticket.SitNumber;
+            ticketInDb.StatusId = ticket.StatusId;
             ticketInDb.DateCreated = ticket.DateCreated;
             ticketInDb.MonthCreated = ticketInDb.MonthCreated;
             ticketInDb.YearCreated = ticketInDb.YearCreated;

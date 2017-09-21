@@ -17,6 +17,7 @@ namespace InformationServices.Data
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<Status> Statuses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

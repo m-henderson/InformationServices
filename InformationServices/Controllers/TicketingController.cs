@@ -8,6 +8,7 @@ using InformationServices.Data;
 using InformationServices.Models;
 using InformationServices.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace InformationServices.Controllers
@@ -76,7 +77,6 @@ namespace InformationServices.Controllers
         public IActionResult New()
         {
             var model = new TicketViewModel();
-            model.Status = "True";
 
             return View(model);
         }
@@ -103,6 +103,45 @@ namespace InformationServices.Controllers
                 .SingleOrDefault(m => m.Id == id);
 
             return View(ticket);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var ticket = _dbContext.Tickets.Single(t => t.Id == id);
+
+            var viewModel = new TicketViewModel
+            {
+
+                StatusId =  ticket.StatusId,
+                Title = ticket.Title, 
+                Id = ticket.Id,
+                DateCreated = ticket.DateCreated,
+                SitNumber = ticket.SitNumber,
+                Description = ticket.Description
+                
+            }; 
+          
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateTicket(Ticket ticket)
+        {
+
+            var ticketInDb = _dbContext.Tickets.SingleOrDefault(t => t.Id == ticket.Id);
+            ticketInDb.Id = ticket.Id;
+            ticketInDb.Title = ticket.Title;
+            ticketInDb.Description = ticket.Description;
+            ticketInDb.SitNumber = ticket.SitNumber;
+            ticketInDb.StatusId = ticket.StatusId;
+            ticketInDb.DateCreated = ticket.DateCreated;
+            ticketInDb.MonthCreated = ticketInDb.MonthCreated;
+            ticketInDb.YearCreated = ticketInDb.YearCreated;
+
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+
         }
     }
 }

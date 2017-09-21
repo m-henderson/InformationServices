@@ -1,5 +1,5 @@
 ﻿@using InformationServices.Extensions
-@model PaginatedList<InformationServices.Models.Ticket>
+@model PaginatedList<Ticket>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -41,13 +41,15 @@
             <td>@ticket.Title</td>
             <td>@ticket.Description.Truncate(20)</td>
             <td>@ticket.DateCreated</td>
-            @if (ticket.Status == "True")
-            {
-                <td style="color: #d9534f">Open</td>
-            }
-            else
-            {
-                <td style="color: #5cb85c">Closed</td>
+            @{
+                if (ticket.StatusId == 1)
+                {
+                    <td>Open</td>
+                }
+                else
+                {
+                    <td>Closed</td>
+                }
             }
             <td>
                 <a asp-action="Edit" asp-route-id="@ticket.Id">Edit</a> |

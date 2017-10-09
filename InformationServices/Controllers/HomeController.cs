@@ -37,9 +37,41 @@ namespace InformationServices.Controllers
         
         public IActionResult Index()
         {
+            DateTime currentYear = new DateTime();
+
+            var month = DateTime.Now.Month.ToString();
+
+
+            var september = 9;
+            var septTicket = 0;
+            var augTicketCount = 0;
+
+            var ticketsOfSept = _dbContext.Tickets.Where(t => t.MonthCreated == september);
+            var ticketsOfAug = _dbContext.Tickets.Where(t => t.MonthCreated == 8);
+
+            foreach (var ticket in ticketsOfSept)
+            {
+                septTicket++;
+            }
+
+            foreach (var ticket in ticketsOfAug)
+            {
+                augTicketCount++;
+            }
+            
             var tickets = _dbContext.Tickets.ToList();
-            var ticketsFromSeptember = from t in tickets where t.MonthCreated.Equals(Months.September) select t;
-            ViewData["TicketsFromSeptember"] = ticketsFromSeptember; 
+            var count = 0;
+
+            foreach (var ticket in tickets)
+            {
+                count++;
+            }
+            ViewData["CurrentMonth"] = month;
+            ViewData["TicketCount"] = count;
+            ViewData["SeptemberTickets"] = septTicket;
+            ViewData["AugustTickets"] = augTicketCount;
+
+
             return View();
         }
 

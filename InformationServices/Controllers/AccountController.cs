@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using InformationServices.Models;
 using InformationServices.Models.AccountViewModels;
 using InformationServices.Services;
+using Microsoft.AspNetCore.Cors;
 
 namespace InformationServices.Controllers
 {

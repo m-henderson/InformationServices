@@ -1,87 +1,79 @@
-﻿@model InformationServices.Models.Ticket
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-
-<div id="departments" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-<div id="tickets" style="width:100%; height:400px;"></div>
-
-<h1>@ViewData["TicketsFromSeptember"]</h1>
-<script>
-    Highcharts.chart('departments', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Browser market shares January, 2015 to May, 2015'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                    style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Brands',
-            colorByPoint: true,
-            data: [{
-                name: 'Microsoft Internet Explorer',
-                y: 56.33
-            }, {
-                name: 'Chrome',
-                y: 24.03,
-                sliced: true,
-                selected: true
-            }, {
-                name: 'Firefox',
-                y: 10.38
-            }, {
-                name: 'Safari',
-                y: 4.77
-            }, {
-                name: 'Opera',
-                y: 0.91
-            }, {
-                name: 'Proprietary or Undetectable',
-                y: 0.2
-            }]
-        }]
-    });
-</script>
-<script>
-    Highcharts.chart('tickets', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Fruit Consumption'
-        },
-        xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
-            title: {
-                text: 'Fruit eaten'
-            }
-        },
-        series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }]
-    });
-</script>
+﻿ <div class="alert alert-warning">
+    <p>ticket counts will reset every year</p>
+</div>
+<div class="container">
+    <h2>Ticket Totals</h2>
+    <p>This table represents tickets created in the current year</p>
+   
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Month</th>
+            <th>Ticket Count</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>January</td>
+            <td>@ViewData["JanuaryTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>February</td>
+            <td>@ViewData["FebruaryTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>March</td>
+            <td>@ViewData["MarchTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>April</td>
+            <td>@ViewData["AprilTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>May</td>
+            <td>@ViewData["MayTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>June</td>
+            <td>@ViewData["JuneTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>July</td>
+            <td>@ViewData["JulyTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>August</td>
+            <td>@ViewData["AugustTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>September</td>
+            <td>@ViewData["SeptemberTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>October</td>
+            <td>@ViewData["OctoberTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>November</td>
+            <td>@ViewData["NovemberTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        <tr>
+            <td>December</td>
+            <td>@ViewData["DecemberTicketCount"]</td>
+            <td>@ViewData["CurrentYear"]</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

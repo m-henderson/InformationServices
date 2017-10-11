@@ -25,7 +25,7 @@
                     {
                         <span class="label label-primary">Sit: @Model.SitNumber</span>
                     }
-                    @if (Model.Status == "True")
+                    @if (Model.StatusId == 1)
                     {
 
                         <span class="label label-danger">Status: Open</span>
@@ -43,8 +43,9 @@
             </div>
         </div>
         <div class="panel-footer clearfix">
+            <button class="btn btn-primary" onclick="window.print()">Print</button>
+            
             <a asp-action="Index">Back to List</a>
-
         </div>
     </div>
 </div>

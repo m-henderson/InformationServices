@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using InformationServices.Data;
 using InformationServices.Models;
 using InformationServices.Services;
+using Microsoft.AspNetCore.HttpOverrides;
+
 namespace InformationServices
 {
     public class Startup
@@ -53,7 +55,10 @@ namespace InformationServices
             }
 
             app.UseStaticFiles();
-
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             app.UseAuthentication();
 
             app.UseMvc(routes =>

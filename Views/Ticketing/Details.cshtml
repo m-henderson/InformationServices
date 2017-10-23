@@ -1,0 +1,52 @@
+﻿@model InformationServices.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center">Ticket Details</h2>
+
+<div class="container">
+<div class="row col-md-offset-2 col-md-8">
+    <div class="panel panel-default ">
+        <div class="panel-heading">
+            @Model.Title.ToUpper()
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    @if (Model.SitNumber.Equals(0))
+                    {
+                        <span class="label label-primary">Sit: Not Specified</span>
+                    }
+                    else
+                    {
+                        <span class="label label-primary">Sit: @Model.SitNumber</span>
+                    }
+                    @if (Model.StatusId == 1)
+                    {
+
+                        <span class="label label-danger">Status: Open</span>
+                    }
+                    else
+                    {
+                        <span class="label label-success">Status: Closed</span>
+                    }
+                    <span class="label label-info">Created: @Model.DateCreated</span>
+                    <br />
+                    <div class="well">
+                        @Model.Description
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer clearfix">
+            <button class="btn btn-primary" onclick="window.print()">Print</button>
+            
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+</div>

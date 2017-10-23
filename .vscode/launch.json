@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceRoot}/InformationServices/bin/Debug/netcoreapp2.0/InformationServices.dll",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/InformationServices.dll",
             "args": [],
-            "cwd": "${workspaceRoot}/InformationServices",
+            "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {

@@ -27,10 +27,13 @@ namespace InformationServices.Models.ViewModels
         public Status Status { get; set; }
 
 
+
         public List<SelectListItem> Statuses { get; set; } = new List<SelectListItem>
         {
             new SelectListItem { Value = "1", Text = "Open" },
             new SelectListItem { Value = "2", Text = "Closed" }
         };
+
+        
     }
 }

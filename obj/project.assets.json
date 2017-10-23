@@ -13123,15 +13123,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\projects\\InformationServices\\InformationServices\\InformationServices.csproj",
+      "projectUniqueName": "C:\\projects\\InformationServices\\InformationServices.csproj",
       "projectName": "InformationServices",
-      "projectPath": "C:\\projects\\InformationServices\\InformationServices\\InformationServices.csproj",
+      "projectPath": "C:\\projects\\InformationServices\\InformationServices.csproj",
       "packagesPath": "C:\\Users\\Michael Henderson\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\InformationServices\\InformationServices\\obj\\",
+      "outputPath": "C:\\projects\\InformationServices\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13162,7 +13159,20 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "2.0.0",
+            "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "2.0.0"
+          },
           "Microsoft.AspNetCore.Server.Kestrel": {
+            "target": "Package",
+            "version": "2.0.0"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "2.0.0"
           },
@@ -13173,19 +13183,6 @@
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "2.0.0"
           }

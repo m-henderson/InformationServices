@@ -9,3 +9,4 @@ C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.Asse
 C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.AssemblyInfo.cs
 C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.dll
 C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.pdb
+C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.csprojResolveAssemblyReference.cache

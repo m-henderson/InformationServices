@@ -25,7 +25,7 @@ namespace InformationServices
 
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseKestrel("http://localhost:5000")
+                .UseKestrel()
                 .Build();
                 
     }

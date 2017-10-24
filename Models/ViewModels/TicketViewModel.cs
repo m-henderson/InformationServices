@@ -21,7 +21,7 @@ namespace InformationServices.Models.ViewModels
         public DateTime? DateCreated { get; set; }
         public int? MonthCreated { get; set; }
         public int? YearCreated { get; set; }
-
+        public bool IsCallBack { get; set; }
         public Ticket Ticket { get; set; }
 
         public Status Status { get; set; }

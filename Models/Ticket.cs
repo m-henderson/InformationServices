@@ -20,7 +20,7 @@ namespace InformationServices.Models
         public int? MonthCreated { get; set; }   
         public int? YearCreated { get; set; }
         public int StatusId { get; set; }
-        public bool? IsCallBack { get; set; }
+        public bool IsCallBack { get; set; }
         public virtual ICollection<Status> Statuses { get; set; }
     }
 }

@@ -149,5 +149,15 @@ namespace InformationServices.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public IActionResult Delete(int id)
+        {
+            var ticketInDb = _dbContext.Tickets.SingleOrDefault(t => t.Id == id);
+
+            _dbContext.Remove(ticketInDb);
+            _dbContext.SaveChanges();
+
+           return RedirectToAction("Index");
+        }
     }
 }

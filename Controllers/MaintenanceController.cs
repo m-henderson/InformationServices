@@ -8,7 +8,13 @@ namespace InformationServices.Controllers
 {
     public class MaintenanceController : Controller
     {
+       
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult New()
         {
             return View();
         }

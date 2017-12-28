@@ -164,8 +164,11 @@ namespace InformationServices.Controllers
             ViewData["DecemberCallBacks"] = decemberCallBacks;
 
             
-
-            return View();
+            // census data 
+            var census = _dbContext.Censuses.ToList();
+       
+          
+            return View(census);
         }
         public int CountCallBacks(int month)
         {

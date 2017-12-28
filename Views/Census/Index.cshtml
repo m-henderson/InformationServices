@@ -1,1 +1,28 @@
 ﻿
+
+<div class="container">
+    <div class="row census-form">
+        <div class="col-md-6 col-md-offset-2">
+            <form method="post" asp-action="Create" asp-controller="Census">
+                <div class="" id="alert"></div>
+                <div class="form-group">
+                    <label for="Department">Department</label>
+                    <select name="Department" id="Department" class="form-control">
+                        <option value="Geri">Geri</option>
+                        <option value="HospitalWide">Hospital Wide</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="PatientCount">Count</label>
+                    <input name="PatientCount" type="number" class="form-control" id="PatientCount">
+                </div>
+                <div class="form-group">
+                    <label for="DateTime">Date</label>
+                    <input name="DateTime" type="date" class="form-control" id="DateTime">
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

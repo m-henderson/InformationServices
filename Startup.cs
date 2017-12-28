@@ -12,6 +12,8 @@ using InformationServices.Data;
 using InformationServices.Models;
 using InformationServices.Services;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.WebSockets.Internal;
+using NToastNotify;
 
 namespace InformationServices
 {
@@ -36,6 +38,11 @@ namespace InformationServices
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddNToastNotify(new ToastOption()
+            {
+                ProgressBar = false,
+                PositionClass = ToastPositions.BottomCenter
+            });
 
             services.AddMvc();
         }

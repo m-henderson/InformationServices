@@ -11,9 +11,10 @@ using System;
 namespace InformationServices.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171228122048_addcensusprops")]
+    partial class addcensusprops
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,8 +79,6 @@ namespace InformationServices.Data.Migrations
 
                     b.Property<DateTime>("DateTime");
 
-                    b.Property<string>("Department");
-
                     b.Property<int>("PatientCount");
 
                     b.HasKey("Id");
@@ -92,11 +91,15 @@ namespace InformationServices.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("CensusId");
+
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments");
+                    b.HasIndex("CensusId");
+
+                    b.ToTable("Department");
                 });
 
             modelBuilder.Entity("InformationServices.Models.Post", b =>
@@ -263,6 +266,13 @@ namespace InformationServices.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("InformationServices.Models.Department", b =>
+                {
+                    b.HasOne("InformationServices.Models.Census")
+                        .WithMany("Department")
+                        .HasForeignKey("CensusId");
                 });
 
             modelBuilder.Entity("InformationServices.Models.Status", b =>

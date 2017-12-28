@@ -1,4 +1,5 @@
-﻿ <div class="alert alert-warning">
+﻿@model IEnumerable<InformationServices.Models.Census>
+<div class="alert alert-warning">
     <p>ticket counts will reset every year</p>
 </div>
 <div class="container">
@@ -89,4 +90,28 @@
         </tr>
         </tbody>
     </table>
+</div>
+<div class="container">
+    <h2>Census Data</h2>
+       <table class="table">
+           <thead>
+           <tr>
+               <th>Department</th>
+               <th>Patient Count</th>
+               <th>Date</th>
+           </tr>
+           </thead>
+           <tbody>
+           
+           @foreach (var data in Model)
+           {
+               <tr>
+                   <td>@data.Department</td>
+                   <td>@data.PatientCount</td>
+                   <td>@data.DateTime.ToString("d")</td>
+               </tr>
+           }
+           </tbody>
+       </table>
+   
 </div>

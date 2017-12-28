@@ -4,9 +4,9 @@ C:\projects\InformationServices\bin\Debug\netcoreapp2.0\InformationServices.runt
 C:\projects\InformationServices\bin\Debug\netcoreapp2.0\InformationServices.dll
 C:\projects\InformationServices\bin\Debug\netcoreapp2.0\InformationServices.pdb
 C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.csproj.CoreCompileInputs.cache
-C:\projects\InformationServices\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.AssemblyInfoInputs.cache
 C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.AssemblyInfo.cs
 C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.dll
 C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.pdb
 C:\projects\InformationServices\obj\Debug\netcoreapp2.0\InformationServices.csprojResolveAssemblyReference.cache
+C:\projects\InformationServices\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

@@ -26,6 +26,7 @@ namespace InformationServices
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .UseKestrel()
+                .UseUrls("http://192.168.0.32:8080")
                 .Build();
                 
     }

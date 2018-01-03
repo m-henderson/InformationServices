@@ -262,3 +262,6 @@ __pycache__/
 .obj/
 bin
 obj
+bin/Debug/netcoreapp2.0/InformationServices.dll
+obj/Debug/netcoreapp2.0/InformationServices.csproj.CoreCompileInputs.cache
+obj/Debug/netcoreapp2.0/InformationServices.pdb
